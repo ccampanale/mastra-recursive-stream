@@ -1,0 +1,35 @@
+<div class="demo-container">
+  <h1>Mastra Client Tools Bug Reproduction</h1>
+  <p class="subtitle">
+    Reproduces
+    <a href="https://github.com/mastra-ai/mastra/issues/14364" target="_blank">#14364</a>:
+    recursive stream failure (HTTP 400) after client tool call.
+  </p>
+
+  <div class="input-row">
+    <input
+      [(ngModel)]="userMessage"
+      placeholder="e.g. Tell me about user 42"
+      [disabled]="isStreaming()"
+      (keydown.enter)="sendMessage()"
+      class="message-input"
+    />
+    <button
+      (click)="sendMessage()"
+      [disabled]="isStreaming()"
+      class="send-btn"
+    >
+      {{ isStreaming() ? 'Streaming...' : 'Send' }}
+    </button>
+  </div>
+
+  @if (hasError()) {
+    <div class="error-box">
+      <strong>Error:</strong> {{ errorMessage() }}
+    </div>
+  }
+
+  @if (streamOutput()) {
+    <pre class="output-box">{{ streamOutput() }}</pre>
+  }
+</div>
