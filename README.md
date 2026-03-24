@@ -1,5 +1,8 @@
 # mastra-recursive-stream
 
+> [!note]
+> This repo was thrown together with Copilot + Claude Sonnet 4.6 in an attempt to reproduce mastra-ai/mastra#14364. However, it actually showed that the bug was not on the mastra side and the issue was eventually closed. I decided to keep this repo as it still exemplifies a simple Angular + Mastra Server integration with rudimentary agent stream handling. 
+
 Welcome to your new [Mastra](https://mastra.ai/) project! We're excited to see what you'll build.
 
 ## Getting Started
